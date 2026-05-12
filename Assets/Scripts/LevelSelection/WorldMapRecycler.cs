@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class WorldMapRecycler : MonoBehaviour
@@ -36,8 +37,7 @@ public class WorldMapRecycler : MonoBehaviour
         if (allData == null ||
             allData.Count == 0)
         {
-            Debug.LogError(
-                "No Section Data!");
+            Debug.LogError("No Section Data!");
 
             enabled = false;
 
@@ -46,9 +46,7 @@ public class WorldMapRecycler : MonoBehaviour
 
         PlayerProgress.SetCurrentLevel(1);
 
-        Debug.Log(
-            "Cur level " +
-            PlayerProgress.CurrentLevel);
+        Debug.Log( "Cur level " + PlayerProgress.CurrentLevel);
 
         SetupContent();
 
@@ -243,4 +241,8 @@ public class WorldMapRecycler : MonoBehaviour
             "Recycle Up -> Section "
             + topIndex);
     }
+    public void LoadCurrentLevel()
+    {
+        SceneManager.LoadScene("Level " + PlayerProgress.CurrentLevel);
+    }    
 }

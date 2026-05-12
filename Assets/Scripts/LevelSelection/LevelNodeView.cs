@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class LevelNodeView : MonoBehaviour
@@ -40,8 +41,6 @@ public class LevelNodeView : MonoBehaviour
 
     void OnClick()
     {
-        Debug.Log(
-            "Open Level: " +
-            levelId);
+        SceneManager.LoadScene("Level " + levelId);
     }
 }
