@@ -15,7 +15,13 @@ MonoBehaviour:
   levels:
   - levelId: 19
     position: {x: 50, y: -350}
+    limitMove: 25
+    limitTime: 30
   - levelId: 20
     position: {x: 200, y: 0}
+    limitMove: 0
+    limitTime: 0
   - levelId: 21
     position: {x: -100, y: 300}
+    limitMove: 0
+    limitTime: 0

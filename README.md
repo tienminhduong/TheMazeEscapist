@@ -1,14 +1,15 @@
 ![UIT](https://img.shields.io/badge/from-UIT%20VNUHCM-blue?style=for-the-badge&link=https%3A%2F%2Fwww.uit.edu.vn%2F)
 
-# Đậu Đậu The Maze Escapist
+# Đậu Đậu The Maze Escapist 2.0
 
 ## Contributors:
 
-- Leader: Nguyễn Lê Tuấn Anh - 22520056 - [Github](https://github.com/tuananhnguyen2004)
+- Leader: Bùi Bách Nguyên - 23521036 - [Github](https://github.com/BuiBachNguyen)
 - Member: Nguyễn Thị Mỹ Như - 23521127 - [Github](https://github.com/ntmynhu)
-- Member: Bùi Bách Nguyên - 23521036 - [Github](https://github.com/BuiBachNguyen)
+- Member: Nguyễn Võ Ngọc Bảo - 23520131 - [Github](https://github.com/AdamNbz)
 - Member: Tiền Minh Dương - 23520357 - [Github](https://github.com/tienminhduong)
-- Member: Nguyễn Võ Ái Nhã - 25521265 - [Github](https://github.com/iinha)
+- Member: Lữ Nguyễn Duy Đức - 23520305 - [Github](https://github.com/DucLove1)
+- Member: Đặng Minh Nhật - 23521093 - [Github](https://github.com/hamstrous)
 
 ## Description: 
 Đậu Đậu The Maze Escapist is a puzzle-adventure game specially created to celebrate the 20th anniversary of University of Information Technology. By guiding the mascot Đậu Đậu through challenging labyrinths on a journey to school., players must help Đậu Đậu arrive in time for the grand anniversary celebration.

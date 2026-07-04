@@ -47,8 +47,308 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   _initialPoolSize: 16
   _maxPoolSize: 64
-  _sfxEventList: []
-  _musicEventList: []
+  _sfxEventList:
+  - _id: click_to_start
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: player_move
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+      _volumeRange: {x: 0.5, y: 0.7}
+      _pitchRange: {x: 0.7, y: 1}
+  - _id: victory
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 63bb9010cb7affb68b8184f19c42395e, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: trash_can_collected
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 8222b9f2e8c510ff5a5a20b6dcddcb77, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: trash_paper_collected
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 07b30c18ae2e0d47898478a00bea44b9, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: recycle_trash
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 8944cefd33245032cbf7399b33b1f09c, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: win_point_unlocked
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 31d1fdb103b6be8edbd3818d0a937966, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: student_card_collected
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 700c806f999fafb3aa9514440ab8b990, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: teleport
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 0d464f8e1c012c06292f7184c841a7d2, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: path_finding
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 7077049262d914cd6a454b8f9bed3373, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: rock
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 043f20cf5bd4d886f87e9b42b27ebf33, type: 3}
+      _volumeRange: {x: 0.5, y: 0.7}
+      _pitchRange: {x: 1, y: 1}
+  - _id: lose
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: ee341999dc3c254b6bbf64b9ce57f236, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: wind
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: adf896c9a55ee0043b91423091774ade, type: 3}
+      _volumeRange: {x: 0.05, y: 0.1}
+      _pitchRange: {x: 0.6, y: 0.8}
+  - _id: whoosh
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: de11c8c666db31941a313062f44c9103, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: dog
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: b5edf85bd9b6c25428dbd8aaee586d1f, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: throw_sword
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: bb28cb5d416078446ac2963adf5ab43c, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: pencil_appear
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 624b7e7d2d66aa849a772f90f4857abb, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: player_hurt
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 3b0d40524c5bff94eb8ae089673879e6, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: boss_hurt
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: d895d5f2700f30d4eb5aadf3d3053dad, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: explosion
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: d1efbba02795e344a93814397a609d77, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: sword_hit
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 80c436511c37407428376e0dbfa32906, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: pencil_attack
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 6a799bf249248d9429119a37773b3ccd, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  - _id: warning
+    _mixerGroup: {fileID: -1201993092187521900, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 500ad6c3b05d5184eb8631cd7b80a6e8, type: 3}
+      _volumeRange: {x: 0.7, y: 0.9}
+      _pitchRange: {x: 1, y: 1}
+  _musicEventList:
+  - _id: start_bgm
+    _mixerGroup: {fileID: 1499056565531126519, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 2cebe5ef59f447d4d803665e3ecf1a2f, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
+  - _id: boss_bgm
+    _mixerGroup: {fileID: 1499056565531126519, guid: 36efd4fa579c33e4bb2b8290b675206c, type: 2}
+    _is3D: 0
+    _spatialBlend: 0
+    _minDistance: 1
+    _maxDistance: 500
+    _priority: 128
+    _cooldownSeconds: 0
+    _variationList:
+    - _clip: {fileID: 8300000, guid: 3e450de1e6e36bb448b69295da896b14, type: 3}
+      _volumeRange: {x: 1, y: 1}
+      _pitchRange: {x: 1, y: 1}
   _backgroundMusicSource: {fileID: 4449651195733564384}
 --- !u!1 &4668174753556581444
 GameObject:

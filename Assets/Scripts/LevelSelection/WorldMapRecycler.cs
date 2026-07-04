@@ -6,6 +6,14 @@ using UnityEngine.UI;
 
 public class WorldMapRecycler : MonoBehaviour
 {
+    public static WorldMapRecycler Instance;
+    [SerializeField]
+    private List<SectionData> allData;
+    private void Awake()
+    {
+        Instance = this;
+    }
+    public List<SectionData> AllData => allData;
     [Header("References")]
     [SerializeField]
     private ScrollRect scrollRect;
@@ -23,8 +31,6 @@ public class WorldMapRecycler : MonoBehaviour
     [SerializeField]
     private int visibleCount = 3;
 
-    [SerializeField]
-    private List<SectionData> allData;
 
     private readonly List<SectionView>
         activeSections = new();
@@ -49,6 +55,8 @@ public class WorldMapRecycler : MonoBehaviour
         CreateInitialSections();
 
         ScrollToCurrentLevelSmooth();
+
+        PlayerPrefs.SetString("Level1", "true|true|true");
     }
     public void PlusLevel()
     {
@@ -376,5 +384,27 @@ public class WorldMapRecycler : MonoBehaviour
     {
         PlayerProgress.SetCurrentLevel(1);
         SceneController.Instance.TransitionToScene("LevelSelection");
-    }    
+    }
+
+    //public LevelNodeData GetRefById(int levelId)
+    //{
+    //    int index = levelId - 1;
+    //    var data = WorldMapRecycler.Instance.AllData;
+    //    LevelNodeData levelNodeData = data[index / 3].levels[index % 3];
+    //    return levelNodeData;
+    //}
+    public LevelNodeData GetRefById(int levelId)
+    {
+        int index = levelId - 1;
+
+        var data = WorldMapRecycler.Instance.AllData;
+
+        int sectionIndex = index / 3;
+        int levelIndex = index % 3;
+
+        // Đảo lại vì AllData đang bị ngược
+        sectionIndex = data.Count - 1 - sectionIndex;
+
+        return data[sectionIndex].levels[levelIndex];
+    }
 }

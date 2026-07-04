@@ -20,9 +20,9 @@ public class SlideShow : MonoBehaviour
     [SerializeField] private float slideDuration = 0.35f;
     [SerializeField] private float slideDistance = 1200f;
 
-    private int currentIndex;
+    public int currentIndex;
     private bool isAnimating;
-
+    public bool haveToOpen = false;
     private void Awake()
     {
         openButton.onClick.AddListener(Open);
@@ -42,6 +42,11 @@ public class SlideShow : MonoBehaviour
         canvas.interactable = false;
 
         ShowSlideInstant(currentIndex);
+
+        if (haveToOpen)
+        {
+            Open();
+        }
     }
 
     private void Open()

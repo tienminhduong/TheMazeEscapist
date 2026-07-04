@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PathFindingLogic
 {
-    Dictionary<Vector3Int, Node> gridNodes = new();
+    Dictionary<Vector3Int, Node> gridNodes => GridManager.Instance.GetGrid();
 
     readonly Vector3Int[] neighborDirs = { new(1, 0, 0), new(-1, 0, 0), new(0, 1, 0), new(0, -1, 0) };
 
@@ -13,15 +13,15 @@ public class PathFindingLogic
 
     public PathFindingLogic()
     {
-        foreach (var kvp in GridManager.Instance.GetGrid())
-        {
-            gridNodes[kvp.Key] = new Node
-            {
-                position = kvp.Value.position,
-                type = kvp.Value.type,
-                specialTile = kvp.Value.specialTile
-            };
-        }
+        // foreach (var kvp in GridManager.Instance.GetGrid())
+        // {
+        //     gridNodes[kvp.Key] = new Node
+        //     {
+        //         position = kvp.Value.position,
+        //         type = kvp.Value.type,
+        //         specialTile = kvp.Value.specialTile
+        //     };
+        // }
     }
 
 
@@ -119,9 +119,30 @@ public class PathFindingLogic
         return FindPath(startNode, targetNode);
     }
 
+    public List<Node> FindPathFromWorldPos(Vector3 startWorldPos, Vector3 targetWorldPos)
+    {
+        var startNode = gridNodes[GridManager.Instance.WorldToCell(startWorldPos)];
+        if (startNode == null)
+        {
+            Debug.LogError($"Start position {startWorldPos} is not on the grid!");
+            return null;
+        }
+
+        var targetNode = gridNodes[GridManager.Instance.WorldToCell(targetWorldPos)];
+        if (targetNode == null)
+        {
+            Debug.LogError($"Target position {targetWorldPos} is not on the grid!");
+            return null;
+        }
+
+        Debug.Log($"Finding path from {startNode.position} to {targetNode.position}");
+        return FindPath(startNode, targetNode);
+    }
+
     private bool IsNodeWalkable(Vector3Int pos)
     {
         return gridNodes.ContainsKey(pos) && gridNodes[pos].type != TileType.Wall;
+        // return gridNodes.TryGetValue(pos, out Node node) && node.type == TileType.Walkable;
     }
 
     public void SetNodeType(Vector3Int pos, TileType type)

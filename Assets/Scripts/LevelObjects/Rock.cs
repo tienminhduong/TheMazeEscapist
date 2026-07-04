@@ -11,6 +11,7 @@ public class Rock : SpecialTile
     public static UnityAction<Vector3> OnRockEnabled;
 
     public override TileType Type => TileType.Rock;
+    bool isEnabled = false;
 
     void Start()
     {
@@ -22,12 +23,14 @@ public class Rock : SpecialTile
     {
         if (collision.CompareTag("Player"))
         {
+            Debug.Log("Rock tile triggered!");
             EnableRock();
         }
     }
 
     public void EnableRock()
     {
+        if (isEnabled) return;
         rock.SetActive(true);
         hiddenRock.enabled = false;
         AudioManager.Instance.PlaySfx("rock", transform.position);
@@ -35,5 +38,6 @@ public class Rock : SpecialTile
         rock.transform.DOScale(1, 0.3f).SetEase(Ease.OutBack);
         OnSpecialTileInteracted?.Invoke(this);
         OnRockEnabled?.Invoke(rock.transform.position);
+        isEnabled = true;
     }
 }

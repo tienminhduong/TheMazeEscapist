@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
@@ -9,10 +10,11 @@ public class WinPoint : SpecialTile
     public static UnityAction OnLevelComplete;
     [SerializeField] private List<WinpointUnlockCondition> unlockConditions = new();
     public static UnityAction<string> OnUnlockedConditionMet;
+    public static UnityAction<string> OnLockedConditionMet;
 
     private Dictionary<string, bool> conditionStatus = new();
     private int conditionsNotMetCount = 0;
-
+    bool s1 = true, s2 = true, s3 = true;
     public override TileType Type => TileType.WinPoint;
 
     void Awake()
@@ -33,11 +35,41 @@ public class WinPoint : SpecialTile
         }
 
         OnUnlockedConditionMet += UnlockWinPoint;
+        OnLockedConditionMet += LockWinPoint;
+        OnLevelComplete += CompletedLevel;
+        TurnTimer.OnTimeOut += SetSecStarStatus;
+        LevelTimer.OnTimeOut += SetThirdStarStatus;
     }
+
+    private void LockWinPoint(string conditionName)
+    {
+        if (!conditionStatus.ContainsKey(conditionName) || !conditionStatus[conditionName])
+            return;
+
+        conditionStatus[conditionName] = false;
+        conditionsNotMetCount++;
+        if (conditionsNotMetCount == 1)
+        {
+            transform.DOScale(Vector3.zero, 0.3f).SetEase(Ease.OutBack).OnComplete(() =>
+            {
+                gameObject.SetActive(false);
+            });
+        }
+    }
+
+    void SetSecStarStatus()
+    {
+        s2 = false;
+    }    
+    void SetThirdStarStatus()
+    {
+        s3 = false;
+    }    
 
     void OnDestroy()
     {
         OnUnlockedConditionMet -= UnlockWinPoint;
+        OnLockedConditionMet -= LockWinPoint;
     }
 
     void Start()
@@ -76,13 +108,19 @@ public class WinPoint : SpecialTile
             AudioManager.Instance.PlaySfx("victory", Vector2.zero);
         }
     }
+    private void CompletedLevel()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        int currentLevel = int.Parse(currentScene.Replace("Level ", ""));
+        PlayerProgress.SetStarAtLevel(currentLevel, s1, s2, s3);
+    }    
     private void CheckLevel()
     {
         string currentScene = SceneManager.GetActiveScene().name;
 
         int currentLevel = int.Parse(currentScene.Replace("Level ", ""));
 
-        if (currentLevel == PlayerProgress.CurrentLevel && currentLevel != 15)
+        if (currentLevel == PlayerProgress.CurrentLevel && currentLevel != 29)
         {
             PlayerProgress.UnlockNextLevel();
         }
